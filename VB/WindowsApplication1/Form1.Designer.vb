@@ -1,7 +1,5 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace WindowsApplication1
-	Public Partial Class Form1
+﻿Namespace WindowsApplication1
+	Partial Public Class Form1
 		''' <summary>
 		''' Required designer variable.
 		''' </summary>
@@ -12,7 +10,7 @@ Namespace WindowsApplication1
 		''' </summary>
 		''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
 		Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-			If disposing AndAlso (Not components Is Nothing) Then
+			If disposing AndAlso (components IsNot Nothing) Then
 				components.Dispose()
 			End If
 			MyBase.Dispose(disposing)
@@ -27,8 +25,6 @@ Namespace WindowsApplication1
 		Private Sub InitializeComponent()
 			Me.components = New System.ComponentModel.Container()
 			Me.gridControl1 = New DevExpress.XtraGrid.GridControl()
-			Me.dataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-			Me.dataSet11 = New WindowsApplication1.DataSet1()
 			Me.gridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
 			Me.colBoolProperty = New DevExpress.XtraGrid.Columns.GridColumn()
 			Me.colStringProperty = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -40,25 +36,22 @@ Namespace WindowsApplication1
 			Me.repositoryItemTimeEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit()
 			Me.repositoryItemDateEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
 			CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.dataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.dataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.gridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.repositoryItemComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.repositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.repositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.repositoryItemTimeEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.repositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.repositoryItemDateEdit1.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+			CType(Me.repositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
 			Me.SuspendLayout()
 			' 
 			' gridControl1
 			' 
-			Me.gridControl1.DataSource = Me.dataTable1BindingSource
 			Me.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill
 			Me.gridControl1.EmbeddedNavigator.Buttons.Remove.Visible = False
 			Me.gridControl1.EmbeddedNavigator.CustomButtons.AddRange(New DevExpress.XtraEditors.NavigatorCustomButton() { New DevExpress.XtraEditors.NavigatorCustomButton(7, 7, True, True, "", "CustomEdit")})
-			Me.gridControl1.EmbeddedNavigator.Name = ""
-'			Me.gridControl1.EmbeddedNavigator.ButtonClick += New DevExpress.XtraEditors.NavigatorButtonClickEventHandler(Me.gridControl1_EmbeddedNavigator_ButtonClick);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.gridControl1.EmbeddedNavigator.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.gridControl1_EmbeddedNavigator_ButtonClick);
 			Me.gridControl1.Location = New System.Drawing.Point(0, 0)
 			Me.gridControl1.MainView = Me.gridView1
 			Me.gridControl1.Name = "gridControl1"
@@ -67,16 +60,6 @@ Namespace WindowsApplication1
 			Me.gridControl1.TabIndex = 0
 			Me.gridControl1.UseEmbeddedNavigator = True
 			Me.gridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() { Me.gridView1})
-			' 
-			' dataTable1BindingSource
-			' 
-			Me.dataTable1BindingSource.DataMember = "DataTable1"
-			Me.dataTable1BindingSource.DataSource = Me.dataSet11
-			' 
-			' dataSet11
-			' 
-			Me.dataSet11.DataSetName = "DataSet1"
-			Me.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
 			' 
 			' gridView1
 			' 
@@ -147,8 +130,8 @@ Namespace WindowsApplication1
 			' 
 			Me.repositoryItemDateEdit1.AutoHeight = False
 			Me.repositoryItemDateEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+			Me.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { New DevExpress.XtraEditors.Controls.EditorButton()})
 			Me.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1"
-			Me.repositoryItemDateEdit1.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { New DevExpress.XtraEditors.Controls.EditorButton()})
 			' 
 			' Form1
 			' 
@@ -158,16 +141,15 @@ Namespace WindowsApplication1
 			Me.Controls.Add(Me.gridControl1)
 			Me.Name = "Form1"
 			Me.Text = "Form1"
-'			Me.Load += New System.EventHandler(Me.Form1_Load);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.Load += new System.EventHandler(this.Form1_Load);
 			CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.dataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.dataSet11, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.gridView1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.repositoryItemComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.repositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.repositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.repositoryItemTimeEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.repositoryItemDateEdit1.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+			CType(Me.repositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.repositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).EndInit()
 			Me.ResumeLayout(False)
 
@@ -179,8 +161,6 @@ Namespace WindowsApplication1
 		Private gridView1 As DevExpress.XtraGrid.Views.Grid.GridView
 		Private repositoryItemTextEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
 		Private repositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
-		Private dataSet11 As DataSet1
-		Private dataTable1BindingSource As System.Windows.Forms.BindingSource
 		Private repositoryItemTimeEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit
 		Private repositoryItemDateEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
 		Private colBoolProperty As DevExpress.XtraGrid.Columns.GridColumn

@@ -27,9 +27,15 @@ namespace WindowsApplication1 {
         }
 
         public void InitData() {
+            DataTable table = new DataTable();
+            table.Columns.Add("BoolProperty", typeof(bool));
+            table.Columns.Add("StringProperty", typeof(string));
+            table.Columns.Add("CurrentDate", typeof(DateTime));
+            table.Columns.Add("IntProperty", typeof(int));
             for (int i = 0; i <= 10; i++) {
-                dataSet11.DataTable1.Rows.Add(new object[] {  0, i,DateTime.Today, i });
+                table.Rows.Add(new object[] {  0, i, DateTime.Today, i });
             }
+            gridControl1.DataSource = table;
         }
 
         private void Form1_Load(object sender, EventArgs e) {
