@@ -32,10 +32,10 @@ Namespace WindowsApplication1
 			Dim table As New DataTable()
 			table.Columns.Add("BoolProperty", GetType(Boolean))
 			table.Columns.Add("StringProperty", GetType(String))
-			table.Columns.Add("CurrentDate", GetType(Date))
+			table.Columns.Add("CurrentDate", GetType(DateTime))
 			table.Columns.Add("IntProperty", GetType(Integer))
 			For i As Integer = 0 To 10
-				table.Rows.Add(New Object() { 0, i, Date.Today, i })
+				table.Rows.Add(New Object() { 0, i, DateTime.Today, i })
 			Next i
 			gridControl1.DataSource = table
 		End Sub
